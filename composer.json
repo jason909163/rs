@@ -1,0 +1,12 @@
+{
+    "name": "darkb/goodcase",
+    "description": "專案",
+    "require": {
+        "monolog/monolog": "^2.9"
+    },
+    "autoload":{
+        "classmap":[
+            "libraries"
+        ]
+    }
+}
