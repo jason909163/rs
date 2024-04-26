@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- 標題 -->
-  <title>智能化飲食推薦網 - <?php echo $title ?></title>
+  <title>RS電競工廠 - <?php echo $title ?></title>
   
 
   <!-- Bootstrap -->
@@ -18,39 +18,46 @@
   <hender class="position-fixed w-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="index">
+          <img src="photo/logo.png" alt="logo" width="80px" height="80px">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">價目表</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="drink">餐飲價目表</a></li>
+                  <li><a class="dropdown-item" href="cash">包台價目表</a></li>
+                </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">座位介紹</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="esport">電競區</a></li>
+                    <li><a class="dropdown-item" href="sofa">沙發區</a></li>
+                    <li><a class="dropdown-item" href="one">單人包廂</a></li>
+                    <li><a class="dropdown-item" href="two">雙人包廂</a></li>
+                    <li><a class="dropdown-item" href="four">四人包廂 </a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">座位介紹</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">電商連結</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">聯絡我們</a>
+              </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          
+
         </div>
       </div>
     </nav>
