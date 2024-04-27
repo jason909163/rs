@@ -33,6 +33,7 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
         'Database' => __DIR__ . '/../..' . '/libraries/Database.php',
         'DatabaseAccessObject' => __DIR__ . '/../..' . '/libraries/DatabaseAccessObject.php',
         'Mail' => __DIR__ . '/../..' . '/libraries/Mail.php',
+        'MySQL' => __DIR__ . '/../..' . '/config/MySQL.php',
         'Password' => __DIR__ . '/../..' . '/libraries/Password.php',
         'Request' => __DIR__ . '/../..' . '/libraries/Request.php',
         'Router' => __DIR__ . '/../..' . '/libraries/Router.php',

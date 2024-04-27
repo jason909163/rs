@@ -2,9 +2,7 @@
 $route = new Router(Request::uri()); //搭配 .htaccess 排除資料夾名稱後解析 URL
 $parameter = strtolower($route->getParameter(1));
 // 用參數決定載入某頁並讀取需要的資料
- switch ($parameter) {
-
-  
+ switch ($parameter) { 
   case "call":
     $title = "聯絡我們";
     include('view/header/default.php'); // 載入共用的頁首
