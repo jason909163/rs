@@ -3,24 +3,39 @@ $route = new Router(Request::uri()); //搭配 .htaccess 排除資料夾名稱後
 $parameter = strtolower($route->getParameter(1));
 // 用參數決定載入某頁並讀取需要的資料
  switch ($parameter) {
+
   case "drink":
     $title = "餐飲價目表";
     include('view/header/default.php'); // 載入共用的頁首
     include('view/body/drink.php');
     include('view/footer/default.php'); // 載入共用的頁尾
-    break;
+  break;
 
-   case "cash":
+  case "cash":
      $title = "包台價目表";
      include('view/header/default.php'); // 載入共用的頁首
      include('view/body/cash.php');
      include('view/footer/default.php'); // 載入共用的頁尾
-     break;
+  break;
 
-   default:
-     $title = "首頁";
-     include('view/header/default.php'); // 載入共用的頁首
-     include('view/body/index.php');
-     include('view/footer/default.php'); // 載入共用的頁尾
-     break;
+  case "index":
+    $title = "首頁";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/index.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+  case "":
+    $title = "首頁";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/index.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
+  default:
+    $title = "404";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/404.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
  }

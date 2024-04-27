@@ -1,5 +1,4 @@
-<div style="padding-top: 75px;">
+
   <div class=" h-25">
-     404
+  <p class="h1">404</p>
   </div>
-</div>
