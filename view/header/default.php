@@ -9,8 +9,8 @@
   
 
   <!-- Bootstrap -->
-  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
