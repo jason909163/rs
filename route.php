@@ -3,6 +3,19 @@ $route = new Router(Request::uri()); //搭配 .htaccess 排除資料夾名稱後
 $parameter = strtolower($route->getParameter(1));
 // 用參數決定載入某頁並讀取需要的資料
  switch ($parameter) {
+  case "sign":
+    $title = "點數查詢";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/sign.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
+  case "site":
+    $title = "座位介紹";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/site.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
 
   case "drink":
     $title = "餐飲價目表";

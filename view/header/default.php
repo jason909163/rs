@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <hender class="position-fixed w-100">
+  <header class="position-fixed w-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="index">
@@ -38,15 +38,15 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">座位介紹</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="esport">電競區</a></li>
-                  <li><a class="dropdown-item" href="sofa">沙發區</a></li>
-                  <li><a class="dropdown-item" href="one">單人包廂</a></li>
-                  <li><a class="dropdown-item" href="two">雙人包廂</a></li>
-                  <li><a class="dropdown-item" href="four">四人包廂 </a></li>
+                  <li><a class="dropdown-item" href="site#esport">電競區</a></li>
+                  <li><a class="dropdown-item" href="site#sofa">沙發區</a></li>
+                  <li><a class="dropdown-item" href="site#single-booth">單人包廂</a></li>
+                  <li><a class="dropdown-item" href="site#duo-booth">雙人包廂</a></li>
+                  <li><a class="dropdown-item" href="site#four-booth">四人包廂 </a></li>
                 </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">點數查詢</a>
+              <a class="nav-link" href="sign">點數查詢</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">電商連結</a>
@@ -60,5 +60,5 @@
         </div>
       </div>
     </nav>
-  </hender>
+  </header>
 <div style="padding-top: 150px;">
