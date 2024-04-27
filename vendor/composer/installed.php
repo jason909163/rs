@@ -1,30 +1,48 @@
 <?php return array(
     'root' => array(
-        'name' => 'darkb/goodcase',
+        'name' => 'htdoce/rs',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cafe8ba51796c38287e1416fcfe9605c4fa5dda5',
+        'reference' => '0b9cc7077c4579248ef820603925348bf8872d98',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'darkb/goodcase' => array(
+        'fightbulc/moment' => array(
+            'pretty_version' => '1.34',
+            'version' => '1.34.0.0',
+            'reference' => 'c813018ff87dfe77353f838908fc644cc5536b50',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fightbulc/moment',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htdoce/rs' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cafe8ba51796c38287e1416fcfe9605c4fa5dda5',
+            'reference' => '0b9cc7077c4579248ef820603925348bf8872d98',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'monolog/monolog' => array(
-            'pretty_version' => '2.9.2',
-            'version' => '2.9.2.0',
-            'reference' => '437cb3628f4cf6042cc10ae97fc2b8472e48ca1f',
+            'pretty_version' => '2.9.3',
+            'version' => '2.9.3.0',
+            'reference' => 'a30bfe2e142720dfa990d0a7e573997f5d884215',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.9.1',
+            'version' => '6.9.1.0',
+            'reference' => '039de174cd9c17a8389754d3b877a2ed22743e18',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -42,6 +60,17 @@
             'provided' => array(
                 0 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
+        ),
+        'wixel/gump' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '6ce1114cfbb301d2ab3ddf6846b92100ccf048e2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wixel/gump',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
         ),
     ),
 );

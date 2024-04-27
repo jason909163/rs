@@ -57,31 +57,11 @@ class DatabaseAccessObject {
     /**
      * 這段用來讀取資料庫中的資料，回傳的是陣列資料
      */
-    public function queryall($table, $fields, $limit,$order_by,$condition){
-        if(empty($table))return false;
-        if(is_numeric($limit))$limit = "LIMIT ".$limit;
-        if(empty($order_by))$order_by = 1;
-        if(empty($fields))$fields = "*";
-        if(empty($condition)){
-            $this->last_sql = "SELECT {$fields} FROM {$table} ORDER BY {$order_by} {$limit}";
-        }else{
-            $this->last_sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-        }
-            
-        try {
-			$stmt = $this->db->prepare($this->last_sql);
-            $stmt->execute();
-            return $stmt;
-		} catch(PDOException $e) {
-		    $this->error_message = '<p class="bg-danger">'.$e->getMessage().'</p>';
-        }
-    }
-
     public function query($table, $condition, $order_by, $fields, $limit, $data_array){
-        if(!isset($data_array) OR array($data_array) == 0)return false;
+        if(!isset($data_array) OR count($data_array) == 0)return false;
         if(empty($table))return false;
         if(is_numeric($limit))$limit = "LIMIT ".$limit;
-        if(empty($condition))$condition = "";
+        if(empty($condition))$condition = 1;
         if(empty($order_by))$order_by = 1;
         if(empty($fields))$fields = "*";
         $this->last_sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
@@ -125,15 +105,16 @@ class DatabaseAccessObject {
         if($table == null)return false;
         if($id == null) return false;
         if($key_column == null) return false;
-        if(array($data_array) == 0) return false;
+        if(count($data_array) == 0) return false;
 
         $setting_list = "";
-        for ($xx = 0; $xx < count($data_array); $xx++) {
-            /*list($key, $value) = each($data_array);*/  foreach($data_array as $key => $value)
+        $index = 0;
+        foreach ($data_array as $key => $value) {
             $setting_list .= $key . "=" . ':'.$key;
-            if ($xx != count($data_array) - 1){
+            if ($index != count($data_array) - 1){
                 $setting_list .= ",";
             }
+            $index++;
         }
         $data_array[$key_column] = $id;
         $this->last_sql = "UPDATE " . $table . " SET " . $setting_list . " WHERE " . $key_column . " = " . ":".$key_column;
@@ -151,7 +132,6 @@ class DatabaseAccessObject {
         $this->last_sql = "DELETE FROM $table WHERE " . $key_column . " = " . ':'.$key_column;
         $stmt = $this->db->prepare($this->last_sql);
         $stmt->execute(array( ':'.$key_column => $id));
-        return $this;
     }
 
     /**

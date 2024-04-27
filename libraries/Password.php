@@ -103,8 +103,8 @@ Class Password {
     function generate_entropy($bytes){
         $buffer = '';
         $buffer_valid = false;
-        if (function_exists('mcrypt_create_iv') && !defined('PHALANGER')) {
-            $buffer = mcrypt_create_iv($bytes, MCRYPT_DEV_URANDOM);
+        if (!$buffer_valid && is_readable('/dev/urandom')) {
+            $buffer = random_bytes($bytes);
             if ($buffer) {
                 $buffer_valid = true;
             }

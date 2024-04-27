@@ -14,4 +14,5 @@ return array(
     'Password' => $baseDir . '/libraries/Password.php',
     'Request' => $baseDir . '/libraries/Request.php',
     'Router' => $baseDir . '/libraries/Router.php',
+    'UserVeridator' => $baseDir . '/validators/UserVeridator.php',
 );

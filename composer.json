@@ -7,13 +7,16 @@
         }
     ],
     "require": {
-      "wixel/gump": "dev-master"
-      ,"monolog/monolog": "^1.23"
+      "wixel/gump": "dev-master",
+      "monolog/monolog": "*",
+      "fightbulc/moment": "^1.26",
+      "phpmailer/phpmailer": "^6.0"
     },
     "autoload": {
       "classmap": [
-          "libraries",
-          "config"
+        "validators",
+        "libraries",
+        "config"
       ]
     }
 }

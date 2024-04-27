@@ -6,14 +6,24 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
 {
+    public static $files = array (
+        'da253f61703e9c22a5a34f228526f05a' => __DIR__ . '/..' . '/wixel/gump/gump.class.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Moment\\' => 7,
+        ),
+        'G' => 
+        array (
+            'GUMP\\' => 5,
         ),
     );
 
@@ -22,9 +32,21 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Moment\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fightbulc/moment/src',
+        ),
+        'GUMP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wixel/gump/src',
         ),
     );
 
@@ -37,6 +59,7 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
         'Password' => __DIR__ . '/../..' . '/libraries/Password.php',
         'Request' => __DIR__ . '/../..' . '/libraries/Request.php',
         'Router' => __DIR__ . '/../..' . '/libraries/Router.php',
+        'UserVeridator' => __DIR__ . '/../..' . '/validators/UserVeridator.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
