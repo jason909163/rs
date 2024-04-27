@@ -49,14 +49,21 @@
               <a class="nav-link" href="sign">點數查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">電商連結</a>
+              <a class="nav-link" href="shop">電商連結</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">聯絡我們</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">聯絡我們</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="call#one">竹圍店</a></li>
+                  <li><a class="dropdown-item" href="call#two">民生店</a></li>
+                  <li><a class="dropdown-item" href="call#three">信陽店</a></li>
+                  <li><a class="dropdown-item" href="call#four">西門店</a></li>
+                  <li><a class="dropdown-item" href="call#five">淡水店 </a></li>
+                  <li><a class="dropdown-item" href="call#six">泰山店 </a></li>
+                  <li><a class="dropdown-item" href="call#seven">信義店 </a></li>
+                </ul>
             </li>
           </ul>
-          
-
         </div>
       </div>
     </nav>

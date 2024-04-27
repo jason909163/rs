@@ -20,8 +20,8 @@
 </form>
 
 <div style="margin-left: 80px;">
-  <a class="dropdown-item" href="#">註冊</a>
-  <a class="dropdown-item" href="#">忘記密碼</a>
+  <a class="dropdown-item" href="singin">註冊</a>
+  <a class="dropdown-item" href="forget">忘記密碼</a>
 </div>
 
 <style>

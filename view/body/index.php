@@ -1,7 +1,8 @@
-<div class=" h-25">
-<figure class="text-center">
-  <h1 class="display-4">關於我們</h1>
-</figure>
+<body>
+  <div class=" h-25">
+  <figure class="text-center">
+    <h1 class="display-4">關於我們</h1>
+  </figure>
   <figure class="text-center">
     <blockquote class="blockquote">
       <p><strong>RS休閒概念館，RS電競工廠，RS科技網，網咖資歷至今有25年</strong></p>
@@ -13,8 +14,6 @@
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <p><strong>RS休閒概念館的話，1999年以RS科技網開店，2000年改成RS休閒概念館，2016年成立最新 RS電競工廠。</strong></p>
-      <p><strong>是由楊智凱、陳譽書、林根弘與李孝雋，4位所合資成立，完全由自己來經營，並沒有給其他人來加盟！</strong></p>
+      <p><strong>是由楊智凱、陳譽書、林根弘與李孝雋，4位所合資成立，完全由自己來經營，沒有給其他人來加盟！</strong></p>
     </blockquote>
   </figure>
-
-</div>
