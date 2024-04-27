@@ -1,4 +1,4 @@
-<div id="esport" class="h-25" style="text-align:center;" >
+<div id="esport" style="text-align:center;padding-top: 180px" >
   <img src="photo/esport.jpg" alt="esport" style="margin-right: 100px; vertical-align: top;">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
     <blockquote class="blockquote">
@@ -9,11 +9,12 @@
   </div>
 </div>
 
+
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<div id="sofa" class="h-25" style="text-align:center;" >
+<div id="sofa" class="h-25" style="text-align:center;padding-top: 200px" >
   <img src="photo/sofa.jpg" alt="sofa" style="margin-right: 100px; vertical-align: top;"width="960px" height="720px">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
     <blockquote class="blockquote">
@@ -30,7 +31,7 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<div id="single-booth" class="h-25" style="text-align:center;" >
+<div id="single-booth" class="h-25" style="text-align:center;padding-top: 200px" >
   <img src="photo/1.jpg" alt="single-booth" style="margin-right: 100px; vertical-align: top;"width="960px" height="720px">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
     <blockquote class="blockquote">
@@ -47,7 +48,7 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<div id="duo-booth" class="h-25" style="text-align:center;" >
+<div id="duo-booth" class="h-25" style="text-align:center;padding-top: 200px" >
   <img src="photo/2.jpg" alt="duo-booth" style="margin-right: 100px; vertical-align: top;" width="960px" height="720px">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
     <blockquote class="blockquote">
@@ -64,7 +65,7 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<div id="four-booth" class="h-25" style="text-align:center;" >
+<div id="four-booth" class="h-25" style="text-align:center;padding-top: 200px" >
   <img src="photo/4.jpg" alt="four-booth" style="margin-right: 100px; vertical-align: top;"width="960px" height="720px">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
     <blockquote class="blockquote">

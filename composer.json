@@ -1,12 +1,18 @@
 {
-    "name": "darkb/goodcase",
-    "description": "專案",
+    "name": "htdoce/rs",
+    "authors": [
+        {
+            "name": "rs",
+            "email": "jason992858@gmail.com"
+        }
+    ],
     "require": {
-        "monolog/monolog": "^2.9"
+      "monolog/monolog": "^1.23"
     },
-    "autoload":{
-        "classmap":[
-            "libraries"
-        ]
+    "autoload": {
+      "classmap": [
+          "libraries",
+          "config"
+      ]
     }
 }
