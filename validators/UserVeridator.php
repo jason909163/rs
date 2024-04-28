@@ -43,33 +43,38 @@ class UserVeridator {
         
         // 確保資料庫查詢是否成功
         if($result) {
-            // echo "Database query successful.<br>";
+             echo "Database query successful.<br>";
         
             // 確保是否找到了用戶
-            if(isset($result[0]['memberID']) and !empty($result[0]['memberID'])) {
-                // echo "User found in database.<br>";
+            if(isset($result[0]['username']) and !empty($result[0]['username'])) {
+                 echo "User found in database.<br>";
             }
             else {
-                // echo "User not found in database.<br>";
+                 echo "User not found in database.<br>";
             }
                 // 檢查密碼是否匹配
             if($password === $result[0]['password']){
-                // echo "Password matched.<br>";
+                 echo "Password matched.<br>";
+                 // 這裡添加獲取點數的代碼
+                $user_point = $result[0]['point'];
+                
+                // 將用戶點數保存到 session 中
+                $_SESSION['user_point'] = $user_point;
                 return true;
             } 
             else {
-                // echo "Password does not match.<br>";
+                 echo "Password does not match.<br>";
             }
              
         } else {
-            // echo "Database query failed.<br>";
+             echo "Database query failed.<br>";
         }
         
         $this->error[] = '使用者名稱或密碼錯誤。';
         return false;
-    }
-    
 
+    
+    }
 
     /**
      * 驗證帳號是否已存在於資料庫中
@@ -82,7 +87,6 @@ class UserVeridator {
         }
 		return true;
     }
-
     /**
      * 驗證信箱是否已存在於資料庫中
      */
@@ -100,18 +104,17 @@ class UserVeridator {
  */
     public function registerVerification($username, $email){
     // 檢查使用者名稱是否重複
-    $usernameDuplicate = $this->isUsernameDuplicate($username);
-    if (!$usernameDuplicate) {
-        return false;
-    }
+        $usernameDuplicate = $this->isUsernameDuplicate($username);
+        if (!$usernameDuplicate) {
+            return false;
+        }
     
-    // 檢查電子郵件是否重複
-    $emailDuplicate = $this->isEmailDuplicate($email);
-    if (!$emailDuplicate) {
-        return false;
+        // 檢查電子郵件是否重複
+        $emailDuplicate = $this->isEmailDuplicate($email);
+        if (!$emailDuplicate) {
+            return false;
+        }
+        // 如果通過以上檢查，返回 true
+        return true;
     }
-
-    // 如果通過以上檢查，返回 true
-    return true;
-}
 }
