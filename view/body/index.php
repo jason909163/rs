@@ -1,5 +1,66 @@
+<style>
+/* 重置默認的邊距和填充 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body樣式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+/* 容器樣式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 標題樣式 */
+.display-4 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+/* 引用樣式 */
+.blockquote {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 段落樣式 */
+.blockquote p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* 響應式媒體查詢 */
+@media (max-width: 1200px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+  .blockquote {
+    padding: 20px;
+  }
+}
+</style>
+
 <body>
-  
   <div class=" h-25">
   <figure class="text-center">
     <h1 class="display-4">關於我們</h1>
