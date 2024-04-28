@@ -9,12 +9,11 @@ class UserVeridator {
     /**
      * 驗證是否已登入
      */
-    public static function isLogin($loginToken){
-        if($loginToken != ''){
-          return true; 
-        } 
-        else{
-          return false; 
+    public static function isLogin($username){
+        if($username != ''){
+            return true; 
+        } else{
+            return false; 
         }
     }
 
@@ -29,47 +28,90 @@ class UserVeridator {
      * 驗證二次密碼輸入是否相符
      */
     public function isPasswordMatch($password, $passwrodConfirm){
-if ($password != $passwrodConfirm){
-            $this->error[] = 'Passwords do not match.';
+		if ($password != $passwrodConfirm){
+            $this->error[] = '請輸入一樣的密碼.';
             return false;
         }
-return true;
+		return true;
     }
 
     /**
-     * 驗證帳號密碼是否正確可登入
-     */
-public function loginVerification($userid, $password){
-  $result = Database::get()->execute('SELECT * FROM users WHERE active = "Yes" AND userid = :userid', array(':userid' => $userid));
-  if(isset($result[0]['memberID']) and !empty($result[0]['memberID'])) {
-      $passwordObject = new Password();
-      if($passwordObject->password_verify($password,$result[0]['password'])){
-          return true;
-      }
-  }
-  $this->error[] = 'Wrong userid or password or your account has not been activated.';
-  return false;
-}
+    * 驗證帳號密碼是否正確可登入
+    */
+    public function loginVerification($username, $password){
+        $result = Database::get()->execute('SELECT * FROM members WHERE username = :username', array(':username' => $username));
+        
+        // 確保資料庫查詢是否成功
+        if($result) {
+            // echo "Database query successful.<br>";
+        
+            // 確保是否找到了用戶
+            if(isset($result[0]['memberID']) and !empty($result[0]['memberID'])) {
+                // echo "User found in database.<br>";
+            }
+            else {
+                // echo "User not found in database.<br>";
+            }
+                // 檢查密碼是否匹配
+            if($password === $result[0]['password']){
+                // echo "Password matched.<br>";
+                return true;
+            } 
+            else {
+                // echo "Password does not match.<br>";
+            }
+             
+        } else {
+            // echo "Database query failed.<br>";
+        }
+        
+        $this->error[] = '使用者名稱或密碼錯誤。';
+        return false;
+    }
+    
+
 
     /**
      * 驗證帳號是否已存在於資料庫中
      */
-    public function isuseridDuplicate($userid){
-        $result = Database::get()->execute('SELECT userid FROM users WHERE userid = :userid', array(':userid' => $userid));
-        if(isset($result[0]['userid']) and !empty($result[0]['userid'])){
-          $this->error[] = 'userid provided is already in use.';
+    public function isUsernameDuplicate($username){
+        $result = Database::get()->execute('SELECT username FROM members WHERE username = :username', array(':username' => $username));
+        if(isset($result[0]['username']) and !empty($result[0]['username'])){
+          $this->error[] = '提供的使用者名稱已被使用。';
           return false;
         }
-return true;
+		return true;
     }
 
-    public function isReady2Active($id, $active){
-      $result = Database::get()->execute('SELECT userid FROM users WHERE memberID = :memberID AND active = :active', array(':memberID' => $id, ':active' => $active));
-      if(isset($result[0]['userid']) and !empty($result[0]['userid'])){
-        return true;
-      }else{
-        $this->error[] = 'userid provided is already in use.';
-        return false;
-      }
+    /**
+     * 驗證信箱是否已存在於資料庫中
+     */
+    public function isEmailDuplicate($email){
+        $result = Database::get()->execute('SELECT email FROM members WHERE email = :email', array(':email' => $email));
+        if(isset($result[0]['email']) AND !empty($result[0]['email'])){
+            $this->error[] = '提供的電子郵件已被使用。';
+            return false;
+        }
+		return true;
     }   
+
+        /**
+ * 驗證註冊資訊是否正確
+ */
+    public function registerVerification($username, $email){
+    // 檢查使用者名稱是否重複
+    $usernameDuplicate = $this->isUsernameDuplicate($username);
+    if (!$usernameDuplicate) {
+        return false;
+    }
+    
+    // 檢查電子郵件是否重複
+    $emailDuplicate = $this->isEmailDuplicate($email);
+    if (!$emailDuplicate) {
+        return false;
+    }
+
+    // 如果通過以上檢查，返回 true
+    return true;
+}
 }

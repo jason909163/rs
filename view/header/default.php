@@ -46,7 +46,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sign">點數查詢</a>
+              <a class="nav-link" href="register">點數查詢</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="shop">電商連結</a>

@@ -14,6 +14,7 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Plasticbrain\\FlashMessages\\' => 27,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
@@ -31,6 +32,10 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Plasticbrain\\FlashMessages\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/plasticbrain/php-flash-messages/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
@@ -52,6 +57,7 @@ class ComposerStaticInit7ca0cadfed7935c387b5d05e27798f16
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Config' => __DIR__ . '/../..' . '/config/Config.php',
         'Database' => __DIR__ . '/../..' . '/libraries/Database.php',
         'DatabaseAccessObject' => __DIR__ . '/../..' . '/libraries/DatabaseAccessObject.php',
         'Mail' => __DIR__ . '/../..' . '/libraries/Mail.php',

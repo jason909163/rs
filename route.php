@@ -1,52 +1,100 @@
 <?php
-$route = new Router(Request::uri()); //搭配 .htaccess 排除資料夾名稱後解析 URL
+$route = new Router(Request::uri()); // 使用 .htaccess 排除資料夾名稱後解析 URL
 $parameter = strtolower($route->getParameter(1));
-// 用參數決定載入某頁並讀取需要的資料
- switch ($parameter) { 
-  case "call":
-    $title = "聯絡我們";
-    include('view/header/default.php'); // 載入共用的頁首
-    include('view/body/call.php');
-    include('view/footer/default.php'); // 載入共用的頁尾
-  break;
+// 根據參數決定載入特定頁面並讀取需要的資料
 
-  case "shop":
-    $title = "電商連結";
-    include('view/header/default.php'); // 載入共用的頁首
-    include('view/body/shop.php');
-    include('view/footer/default.php'); // 載入共用的頁尾
-  break;
+switch ($parameter) {
+case "logout";
+  unset($_SESSION['memberID']);
+  unset($_SESSION['username']);
+  header('Location: login');
+break;
 
-  case "logout";
-      unset($_SESSION['memberID']);
-      unset($_SESSION['username']);
-      header('Location: login');
-    break;
-    case "home";
-      if(UserVeridator::isLogin(isset($_SESSION['username'])?$_SESSION['username']:'')){
-        include('view/header/default.php'); // 載入共用的頁首
-        include('view/body/home.php');     // 載入登入用的頁面
-        include('view/footer/default.php'); // 載入共用的頁尾
-      }else{
-        header('Location: logout');
+case "home";
+  if(UserVeridator::isLogin(isset($_SESSION['username'])?$_SESSION['username']:'')){
+    $title = "點數查詢";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/home.php');     // 載入登入用的頁面
+    include('view/footer/default.php'); // 載入共用的頁尾
+  }else{
+    header('Location: logout');
+  }
+break;
+
+case "login";
+  if(isset($_POST['submit'])) 
+  {
+      $gump = new GUMP();
+
+      $_POST = $gump->sanitize($_POST); 
+
+      $validation_rules_array = array(
+          'username'    => 'required|alpha_numeric|max_len,20|min_len,3',
+          'password'    => 'required|max_len,20|min_len,3'
+      );
+      $gump->validation_rules($validation_rules_array);
+
+      $filter_rules_array = array(
+          'username' => 'trim|sanitize_string',
+          'password' => 'trim',
+      );
+      $gump->filter_rules($filter_rules_array);
+
+      $validated_data = $gump->run($_POST);
+
+      if($validated_data === false) {
+          $error = $gump->get_readable_errors(false);
+      } else {
+          // validation successful
+          foreach($validation_rules_array as $key => $val) {
+              ${$key} = $_POST[$key];
+          }
+          $userVeridator = new UserVeridator();
+          $userVeridator->loginVerification($username, $password);
+          $error = $userVeridator->getErrorArray();
+
+          if(count($error) == 0){
+              $condition = "username = :username";
+              $order_by = "1";
+              $fields = "*";
+              $limit = "LIMIT 1";
+              $data_array = array(":username" => $username);
+              $result = Database::get()->query("members", $condition, $order_by, $fields, $limit, $data_array);
+              $_SESSION['memberID'] = $result[0]['memberID'];
+              $_SESSION['username'] = $username;
+              header('Location: home');
+              exit; // 確保停止後續程式碼執行
+          }
       }
-    break;
-    case "login";
-      if(isset($_POST['submit'])) 
+  }
+  $title = "點數查詢";
+  include('view/header/default.php'); // 載入共用的頁首
+  include('view/body/login.php');     // 載入登入用的頁面
+  include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
+  case "register":
+    // 註冊處理
+    if(isset($_POST['submit'])) 
       {
-        $gump = new GUMP();
+      // 表單驗證
+      $gump = new GUMP();
 
         $_POST = $gump->sanitize($_POST); 
 
         $validation_rules_array = array(
-          'username'    => 'required|alpha_numeric|max_len,20|min_len,3',
-          'password'    => 'required|max_len,20|min_len,3'
+          'username'    => 'required|alpha_numeric|max_len,20|min_len,8',
+          'email'       => 'required|valid_email',
+          'password'    => 'required|max_len,20|min_len,8',
+          'passwordConfirm' => 'required'
         );
         $gump->validation_rules($validation_rules_array);
 
         $filter_rules_array = array(
           'username' => 'trim|sanitize_string',
+          'email'    => 'trim|sanitize_email',
           'password' => 'trim',
+          'passwordConfirm' => 'trim'
         );
         $gump->filter_rules($filter_rules_array);
 
@@ -60,91 +108,52 @@ $parameter = strtolower($route->getParameter(1));
             ${$key} = $_POST[$key];
           }
           $userVeridator = new UserVeridator();
-          $userVeridator->loginVerification($username, $password);
+          $userVeridator->isPasswordMatch($password, $passwordConfirm);
+          $userVeridator->isUsernameDuplicate($username);
+          $userVeridator->isEmailDuplicate($email);
           $error = $userVeridator->getErrorArray();
-
-          if(count($error) == 0){
-            $condition = "username = :username";
-            $order_by = "1";
-            $fields = "*";
-            $limit = "LIMIT 1";
-            $data_array = array(":username" => $username);
-            $result = Database::get()->query("members", $condition, $order_by, $fields, $limit, $data_array);
-            $_SESSION['memberID'] = $result[0]['memberID'];
-            $_SESSION['username'] = $username;
-            header('Location: home');
-          }
-        }
-      }
-      include('view/header/default.php'); // 載入共用的頁首
-      include('view/body/login.php');     // 載入登入用的頁面
-      include('view/footer/default.php'); // 載入共用的頁尾
-    break;
-
-  case "sign":
-    if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['passwordConfirm'])){
-    $gump = new GUMP();
-    $_POST = $gump->sanitize($_POST);
-    $validation_rules_array = array(
-      'username'    => 'required|alpha_numeric|max_len,20|min_len,8',
-      'password'    => 'required|max_len,20|min_len,8',
-      'passwordConfirm' => 'required'
-    );
-    $gump->validation_rules($validation_rules_array);
-
-    $filter_rules_array = array(
-      'username' => 'trim|sanitize_string',
-      'password' => 'trim',
-      'passwordConfirm' => 'trim'
-    );
-    $gump->filter_rules($filter_rules_array);
-
-    $validated_data = $gump->run($_POST);
-
-    if($validated_data === false) {
-      $error = $gump->get_readable_errors(false);
-    }
-    // validation successful
-    foreach($validation_rules_array as $key => $val) {
-    ${$key} = $_POST[$key];
-    }
-      $userVeridator = new UserVeridator();
-      $userVeridator->isPasswordMatch($password, $passwordConfirm);
-      $userVeridator->isuseridDuplicate($username);
-      $error = $userVeridator->getErrorArray();
-      
-      //if no errors have been created carry on
-      if (is_array($error) && count($error) == 0) 
+        } 
+        //if no errors have been created carry on
+        if(count($error) == 0)
         {
-          //hash the password
-          $passwordObject = new Password();
-          $hashedpassword = $passwordObject->password_hash($password, PASSWORD_BCRYPT);
-      
-          //create the random activasion code
-          $activasion = md5(uniqid(rand(),true));
-      
           try {
-
             // 新增到資料庫
             $data_array = array(
               'username' => $username,
-              'password' => $hashedpassword,
-              'active' => $activasion
+              'password' => $password,
+              'email' => $email,
+
             );
             Database::get()->insert("members", $data_array);
 
-            //redirect to index page
-            header('Location: http://192.0.0.1/rs/SIGN');
+            //redirect to index pag
+            header('Location: register?action=joined');
+            exit; // 重定向後確保停止後續程式碼執行
+            
           //else catch the exception and show the error.
           } catch(PDOException $e) {
               $error[] = $e->getMessage();
           }
         }
-    }
+      }
   
     $title = "點數查詢";
     include('view/header/default.php'); // 載入共用的頁首
-    include('view/body/sign.php');
+    include('view/body/register.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
+  case "call":
+    $title = "聯絡我們";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/call.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
+  break;
+
+  case "shop":
+    $title = "電商連結";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/shop.php');
     include('view/footer/default.php'); // 載入共用的頁尾
   break;
 
@@ -163,19 +172,13 @@ $parameter = strtolower($route->getParameter(1));
   break;
 
   case "cash":
-     $title = "包台價目表";
-     include('view/header/default.php'); // 載入共用的頁首
-     include('view/body/cash.php');
-     include('view/footer/default.php'); // 載入共用的頁尾
+    $title = "包台價目表";
+    include('view/header/default.php'); // 載入共用的頁首
+    include('view/body/cash.php');
+    include('view/footer/default.php'); // 載入共用的頁尾
   break;
 
   case "index":
-    $title = "首頁";
-    include('view/header/default.php'); // 載入共用的頁首
-    include('view/body/index.php');
-    include('view/footer/default.php'); // 載入共用的頁尾
-  break;
-  case "":
     $title = "首頁";
     include('view/header/default.php'); // 載入共用的頁首
     include('view/body/index.php');
@@ -188,5 +191,4 @@ $parameter = strtolower($route->getParameter(1));
     include('view/body/404.php');
     include('view/footer/default.php'); // 載入共用的頁尾
   break;
-
- }
+}
