@@ -1,125 +1,125 @@
-<body>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-	.dropdown-menu {
-  		background-color: #000;
-	}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  .dropdown-menu {
+    background-color: #000;
+  }
 
-	.dropdown-menu a {
-  		color: #fff !important;
-	}
-    body {
-      background-color: #f8f9fa;
-      font-family: Arial, sans-serif;
-    }
+  .dropdown-menu a {
+    color: #fff !important;
+  }
 
-    .form-container {
-      background-color: #ffffff;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 40px;
-    }
+  body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+  }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #333333;
-    }
+  .form-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
 
-    hr {
-      border-color: #dddddd;
-    }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+  }
 
-    .form-group input {
-      border-radius: 3px;
-      padding: 12px;
-      border: 1px solid #dddddd;
-      width: 100%;
-    }
+  hr {
+    border-color: #dddddd;
+  }
 
-    .btn-primary {
-      background-color: #007bff;
-      border: 1px solid #007bff;
-    }
+  .form-group input {
+    border-radius: 3px;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    width: 100%;
+  }
 
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border: 1px solid #0056b3;
-    }
+  .btn-primary {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+  }
 
-    .bg-danger {
-      color: #721c24;
-      background-color: #f8d7da;
-      border-color: #f5c6cb;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border: 1px solid #0056b3;
+  }
 
-    .bg-success {
-      color: #155724;
-      background-color: #d4edda;
-      border-color: #c3e6cb;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-    }
+  .bg-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
 
-    a {
-      color: #007bff;
-    }
+  .bg-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
 
-    a:hover {
-      color: #0056b3;
-    }
-    </style>
+  a {
+    color: #007bff;
+  }
+
+  a:hover {
+    color: #0056b3;
+  }
+</style>
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 form-container">
-            <form role="form" method="post" action="login" autocomplete="off">
-                <h2>請登入</h2>
-                <p><a href='register'>回到註冊頁面</a></p>
-                <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 form-container">
+      <form role="form" method="post" action="login" autocomplete="off">
+        <h2>請登入</h2>
+        <p><a href='register'>回到註冊頁面</a></p>
+        <hr>
 
-                <?php
-                // 檢查是否有錯誤訊息
-                if(isset($error)){
-                    foreach($error as $error){
-                        echo '<p class="bg-danger">'.$error.'</p>';
-                    }
-                }
-                // 檢查是否有特定操作
-                if(isset($_GET['action'])){
+        <?php
+        // 檢查是否有錯誤訊息
+        if (isset($error)) {
+          foreach ($error as $error) {
+            echo '<p class="bg-danger">' . $error . '</p>';
+          }
+        }
+        // 檢查是否有特定操作
+        if (isset($_GET['action'])) {
 
-                    // 檢查操作類型
-                    switch ($_GET['action']) {
-                        case 'active':
-                            echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
-                            break;
-                        case 'reset':
-                            echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
-                            break;
-                        case 'resetAccount':
-                            echo "<h2 class='bg-success'>Password changed, you may now login.</h2>";
-                            break;
-                    }
-                }
-                ?>
-                <div class="form-group">
-                    <input type="text" name="username" id="username" class="form-control input-lg" placeholder="請輸入電話" tabindex="1">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="請輸入密碼" tabindex="3">
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="登入" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
-                </div>
-            </form>
+          // 檢查操作類型
+          switch ($_GET['action']) {
+            case 'active':
+              echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
+              break;
+            case 'reset':
+              echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
+              break;
+            case 'resetAccount':
+              echo "<h2 class='bg-success'>Password changed, you may now login.</h2>";
+              break;
+          }
+        }
+        ?>
+        <div class="form-group">
+          <input type="text" name="username" id="username" class="form-control input-lg" placeholder="請輸入電話" tabindex="1">
         </div>
+        <div class="form-group">
+          <input type="password" name="password" id="password" class="form-control input-lg" placeholder="請輸入密碼" tabindex="3">
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="登入" class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

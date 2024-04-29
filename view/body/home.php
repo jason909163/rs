@@ -22,5 +22,3 @@ $user_point = $_SESSION['user_point'];
             <a href="logout" class="btn btn-primary btn-lg">登出</a>
         </div>
     </div>
-</body>
-</html>

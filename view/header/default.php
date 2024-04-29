@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RS電競工廠 -  <?php echo $title?></title>
+  <title>RS電競工廠 - <?php echo $title ?></title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -13,21 +13,30 @@
   <style>
     /* 自定義導航欄 */
     .navbar {
-      background-color: #000; /* 蘋果官網的導航欄顏色 */
+      background-color: #000;
+      /* 蘋果官網的導航欄顏色 */
     }
+
     .navbar-brand img {
       width: 80px;
       height: 80px;
-      object-fit: cover; /* 確保標誌符合指定空間 */
+      object-fit: cover;
+      /* 確保標誌符合指定空間 */
     }
+
     .navbar-nav .nav-link {
-      color: #fff !important; /* 鏈接的白色文本顏色 */
+      color: #fff !important;
+      /* 鏈接的白色文本顏色 */
     }
+
     .dropdown-menu {
-      background-color: #000; /* 蘋果官網的下拉菜單顏色 */
+      background-color: #000;
+      /* 蘋果官網的下拉菜單顏色 */
     }
+
     .dropdown-menu a {
-      color: #fff !important; /* 下拉項目的白色文本顏色 */
+      color: #fff !important;
+      /* 下拉項目的白色文本顏色 */
     }
   </style>
 </head>
@@ -88,4 +97,3 @@
 
   <div style="padding-top: 150px;">
     <!-- 這裡是你的內容 -->
-
