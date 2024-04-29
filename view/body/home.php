@@ -15,11 +15,12 @@ $user_point = $_SESSION['user_point'];
 ?>
 
 <body>
-    <div>歡迎查詢點數！您的點數為： <?php echo $user_point; ?></div>
-    <div class="col-xs-6 col-md-6">
-        <a href="logout">
-            <input type="submit" name="submit" value="登出" class="btn btn-primary btn-block btn-lg" tabindex="5">
-        </a>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="mb-4">歡迎查詢點數！</h1>
+            <p class="lead">您的點數為： <?php echo $user_point; ?></p>
+            <a href="logout" class="btn btn-primary btn-lg">登出</a>
+        </div>
     </div>
 </body>
 </html>
