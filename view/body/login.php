@@ -75,23 +75,7 @@
     color: #0056b3;
   }
 
-  input[type="text"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-}
 
-  input[type="password"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-}
 </style>
 
 

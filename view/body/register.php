@@ -75,7 +75,7 @@
     color: #0056b3;
   }
 
-  input[type="text"]
+  /* input[type="text"]
 {
   padding:9px 35px; 
   border:3px black solid;
@@ -109,7 +109,7 @@ input[type="password"]
   cursor:pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px; 
-}
+} */
 </style>
 
 <div class="container">
