@@ -74,42 +74,6 @@
   a:hover {
     color: #0056b3;
   }
-
-  /* input[type="text"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-}
-
-input[type="email"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-}
-
-input[type="password"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-}
-
-input[type="password"]
-{
-  padding:9px 35px; 
-  border:3px black solid;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; 
-} */
 </style>
 
 <div class="container">
@@ -120,17 +84,17 @@ input[type="password"]
         <p>已經是會員? <a href='login'>登入</a></p>
         <hr>
         <?php
-        //check for any errors
+        
+        // 檢查是否有錯誤，並顯示錯誤訊息
         if (isset($error)) {
           foreach ($error as $error) {
             echo '<p class="bg-danger">' . $error . '</p>';
           }
-        }
-
-        //if action is joined show success
-        if (isset($_GET['action']) && $_GET['action'] == 'joined') {
+        } elseif (isset($_GET['action']) && $_GET['action'] == 'joined') {
+          // 如果是註冊成功的情況，顯示成功訊息
           echo "<h2 class='bg-success'>註冊成功!</h2>";
         }
+
         ?>
 
         <div class="form-group">

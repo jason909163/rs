@@ -91,26 +91,11 @@
         // 檢查是否有錯誤訊息
         if (isset($error)) {
           foreach ($error as $error) {
-            echo '<p class="bg-danger">' . $error . '</p>';
+            echo '<p class="bg-danger">' . "使用者名稱或密碼錯誤" . '</p>';
           }
         }
-        // 檢查是否有特定操作
-        if (isset($_GET['action'])) {
 
-          // 檢查操作類型
-          switch ($_GET['action']) {
-            case 'active':
-              echo "<h2 class='bg-success'>Your account is now active you may now log in.</h2>";
-              break;
-            case 'reset':
-              echo "<h2 class='bg-success'>Please check your inbox for a reset link.</h2>";
-              break;
-            case 'resetAccount':
-              echo "<h2 class='bg-success'>Password changed, you may now login.</h2>";
-              break;
-          }
-        }
-        ?>
+?>
         <div class="form-group">
           <input type="text" name="username" id="username" class="form-control input-lg" placeholder="請輸入電話" tabindex="1">
         </div>
