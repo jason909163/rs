@@ -101,10 +101,10 @@ switch ($parameter) {
         $_POST = $gump->sanitize($_POST);
 
         $validation_rules_array = array(
-          'username'    => 'alpha_numeric|max_len,20|min_len,8',
+          'username'    => 'alpha_numeric|max_len,50|min_len,2',
           'email'       => 'valid_email',
-          'password'    => 'max_len,20|min_len,8',
-          'passwordConfirm' => 'max_len,20|min_len,8'
+          'password'    => 'max_len,50|min_len,2',
+          'passwordConfirm' => 'max_len,50|min_len,2'
         );
         $gump->validation_rules($validation_rules_array);
 
