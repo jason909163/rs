@@ -1,11 +1,4 @@
 <style>
-  /* 重置默認的邊距和填充 */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   /* Body樣式 */
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -13,12 +6,7 @@
     background-color: #f5f5f5;
   }
 
-  /* 容器樣式 */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+
 
   /* 標題樣式 */
   .display-4 {
@@ -42,7 +30,7 @@
     margin-bottom: 20px;
     font-size: 1.2rem;
   }
-
+  
   /* 響應式媒體查詢 */
   @media (max-width: 1200px) {
     .container {

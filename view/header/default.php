@@ -38,6 +38,10 @@
       color: #fff !important;
       /* 下拉項目的白色文本顏色 */
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 

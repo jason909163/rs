@@ -4,6 +4,11 @@ $parameter = strtolower($route->getParameter(1));
 // 根據參數決定載入特定頁面並讀取需要的資料
 
 switch ($parameter) {
+  // case "test";
+
+  //   include('view/body/test.php');     // 載入登入用的頁面
+
+  //   break;
   case "logout";
     unset($_SESSION['memberID']);
     unset($_SESSION['username']);

@@ -1,6 +1,6 @@
 <figure class="text-center">
     <blockquote class="blockquote">
-        <div id="one" style="padding-top: 150px">
+        <div id="one" style="padding-top: 150px" >
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28891.284745957997!2d121.43557363375137!3d25.155610270682487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442af9da688dfcf%3A0x1316bf510fa0c84b!2zUlPkvJHplpLmpoLlv7XppKjnq7nlnI3lupc!5e0!3m2!1szh-TW!2stw!4v1714224872687!5m2!1szh-TW!2stw" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <p><strong>竹圍店&emsp;地址:新北市淡水區民權路105號6樓&emsp;電話:0288097409</p></strong>
