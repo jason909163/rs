@@ -59,15 +59,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">價目表</a>
-              <ul class="dropdown-menu">
+              <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#drink" role="button" data-toggle="dropdown" aria-expanded="false">價目表</a>
+              <ul id="dropdownMenu1" class="dropdown-menu">
                 <li><a class="dropdown-item" href="drink">餐飲價目表</a></li>
                 <li><a class="dropdown-item" href="cash">包台價目表</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#site" role="button" data-toggle="dropdown" aria-expanded="false">座位介紹</a>
-              <ul class="dropdown-menu">
+              <a id="navbarDropdown2" class="nav-link dropdown-toggle" href="#site" role="button" data-toggle="dropdown" aria-expanded="false">座位介紹</a>
+              <ul id="dropdownMenu2" class="dropdown-menu">
                 <li><a class="dropdown-item" href="site#esport">電競區</a></li>
                 <li><a class="dropdown-item" href="site#sofa">沙發區</a></li>
                 <li><a class="dropdown-item" href="site#single-booth">單人包廂</a></li>
@@ -79,11 +79,11 @@
               <a class="nav-link" href="register">點數查詢</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shop">電商連結</a>
+              <a class="nav-link" href="index#footer">電商連結</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="call" role="button" data-toggle="dropdown" aria-expanded="false">聯絡我們</a>
-              <ul class="dropdown-menu">
+              <a id="navbarDropdown3" class="nav-link dropdown-toggle" href="#call" role="button" data-toggle="dropdown" aria-expanded="false">聯絡我們</a>
+              <ul id="dropdownMenu3" class="dropdown-menu">
                 <li><a class="dropdown-item" href="call#one">竹圍店</a></li>
                 <li><a class="dropdown-item" href="call#two">民生店</a></li>
                 <li><a class="dropdown-item" href="call#three">信陽店</a></li>
@@ -98,6 +98,34 @@
       </div>
     </nav>
   </header>
+  <script>
+    $(document).ready(function() {
+      // 使用事件代理绑定点击事件
+      $(".navbar-nav").on('click', '.nav-item.dropdown', function(e) {
+        var $dropdown = $(this);
+        var $dropdownMenu = $dropdown.find('.dropdown-menu');
 
+        // 关闭除当前点击的菜单以外的所有其他下拉菜单
+        $(".nav-item.dropdown").not($dropdown).find('.dropdown-menu').slideUp("slow");
+
+        // 切换当前菜单的显示状态
+        $dropdownMenu.slideToggle("slow");
+
+        // 阻止事件冒泡
+        e.stopPropagation();
+      });
+
+      // 点击其他区域时关闭下拉菜单
+      $(document).on('click', function(e) {
+        if (!$(e.target).closest('.nav-item.dropdown').length) {
+          $('.nav-item.dropdown .dropdown-menu').slideUp("slow");
+        }
+      });
+
+      // 点击下拉菜单项时阻止默认事件
+      $('.dropdown-menu').on('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
   <div style="padding-top: 150px;">
-    <!-- 這裡是你的內容 -->

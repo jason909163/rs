@@ -175,12 +175,12 @@ switch ($parameter) {
     include('view/footer/default.php'); // 載入共用的頁尾
     break;
 
-  case "shop":
-    $title = "電商連結";
-    include('view/header/default.php'); // 載入共用的頁首
-    include('view/body/shop.php');
-    include('view/footer/default.php'); // 載入共用的頁尾
-    break;
+  // case "shop":
+  //   $title = "電商連結";
+  //   include('view/header/default.php'); // 載入共用的頁首
+  //   include('view/body/shop.php');
+  //   include('view/footer/default.php'); // 載入共用的頁尾
+  //   break;
 
   case "site":
     $title = "座位介紹";
@@ -207,7 +207,7 @@ switch ($parameter) {
     $title = "首頁";
     include('view/header/default.php'); // 載入共用的頁首
     include('view/body/index.php');
-    include('view/footer/default.php'); // 載入共用的頁尾
+    include('view/footer/shop.php'); // 載入共用的頁尾
     break;
 
   default:
