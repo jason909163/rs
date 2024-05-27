@@ -1,6 +1,5 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 <style>
   .dropdown-menu {
     background-color: #000;
@@ -74,8 +73,6 @@
   a:hover {
     color: #0056b3;
   }
-
-
 </style>
 
 
@@ -95,7 +92,7 @@
           }
         }
 
-?>
+        ?>
         <div class="form-group">
           <input type="text" name="username" id="username" class="form-control input-lg" placeholder="請輸入電話" tabindex="1">
         </div>
@@ -110,3 +107,7 @@
     </div>
   </div>
 </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

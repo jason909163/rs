@@ -1,6 +1,4 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <style>
   .dropdown-menu {
     background-color: #000;
@@ -76,7 +74,7 @@
   }
 </style>
 
-<div class="container">
+<div class="container"> 
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 form-container">
       <form role="form" method="post" action="" autocomplete="off">
@@ -127,3 +125,7 @@
     </div>
   </div>
 </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

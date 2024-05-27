@@ -3,7 +3,12 @@
         font-family: Arial, sans-serif;
         background-color: #f8f9fa;
         text-align: center;
+        overflow-x: hidden;
+        /* 隱藏水平滾動條 */
+        margin: 0;
+        padding: 0;
     }
+    
 
     .menu-title {
         font-size: 24px;

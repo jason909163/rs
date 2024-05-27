@@ -14,11 +14,15 @@ if (!isset($_SESSION['user_point'])) {
 $user_point = $_SESSION['user_point'];
 ?>
 
-<body>
-    <div class="container">
-        <div class="text-center">
-            <h1 class="mb-4">歡迎查詢點數！</h1>
-            <p class="lead">您的點數為： <?php echo $user_point; ?></p>
-            <a href="logout" class="btn btn-primary btn-lg">登出</a>
-        </div>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="mb-4">歡迎查詢點數！</h1>
+        <p class="lead">您的點數為： <?php echo $user_point; ?></p>
+        <a href="logout" class="btn btn-primary btn-lg">登出</a>
     </div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
