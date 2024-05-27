@@ -1,4 +1,3 @@
-
 <style>
   .dropdown-menu {
     background-color: #000;
@@ -11,7 +10,12 @@
   body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+    margin: 0;
+    padding: 0;
   }
+
 
   .form-container {
     background-color: #ffffff;
@@ -74,7 +78,7 @@
   }
 </style>
 
-<div class="container"> 
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 form-container">
       <form role="form" method="post" action="" autocomplete="off">
@@ -82,7 +86,7 @@
         <p>已經是會員? <a href='login'>登入</a></p>
         <hr>
         <?php
-        
+
         // 檢查是否有錯誤，並顯示錯誤訊息
         if (isset($error)) {
           foreach ($error as $error) {

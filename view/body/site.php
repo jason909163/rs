@@ -1,4 +1,11 @@
-
+<style>
+  body {
+    overflow-x: hidden;
+    /* 隱藏水平滾動條 */
+    margin: 0;
+    padding: 0;
+  }
+</style>
 <div id="esport" style="text-align:center;padding-top: 180px">
   <img src="photo/esport.jpg" alt="esport" style="margin-right: 100px; vertical-align: top;">
   <div style="display: inline-block; vertical-align: top; text-align: left;">
