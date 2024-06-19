@@ -5,9 +5,6 @@
     line-height: 1.6;
     background-color: #f5f5f5;
   }
-
-
-
   /* 標題樣式 */
   .display-4 {
     color: #000;

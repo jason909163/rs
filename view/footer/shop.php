@@ -1,5 +1,15 @@
 </div>
 </body>
+<style>
+    footer {
+        text-align: center;
+        padding: 5px;
+        background-color: #f1f1f1;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
 <footer>
     <div id="footer" class="container" style="margin-top: 100px;">
         <div class="row justify-content-center align-items-center">

@@ -40,7 +40,7 @@
   }
 
   h1 {
-    margin-left: 21%;
+    margin-left: 28%;
     /* 調整這個值，使標題靠近圖片 */
     margin-bottom: 10px;
     vertical-align: top;
